@@ -8,6 +8,7 @@ plugins {
 
 android {
     compileSdk = Project.COMPILE_SDK
+    namespace = "com.dontsu.data"
 
     defaultConfig {
         minSdk = Project.MIN_SDK

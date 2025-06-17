@@ -3,7 +3,7 @@ object Versions {
     const val core_ktx = "1.8.0"
     const val material = "1.7.0"
     const val constraint_layout = "2.1.4"
-    const val activity_ktx = "1.5.1"
+    const val activity_ktx = "1.10.1"
     const val fragment_ktx = "1.5.2"
     const val appcompat = "1.5.1"
     const val hilt = "2.46"
