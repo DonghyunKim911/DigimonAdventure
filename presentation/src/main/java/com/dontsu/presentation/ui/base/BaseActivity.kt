@@ -13,6 +13,7 @@ abstract class BaseActivity<VB : ViewBinding, VM : ViewModel>(
     abstract val viewModel: VM
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         binding = inflate.invoke(layoutInflater, null, false)
         setContentView(binding.root)

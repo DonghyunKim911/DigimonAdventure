@@ -1,6 +1,6 @@
 object Versions {
     const val kotlin = "1.8.20"
-    const val core_ktx = "1.8.0"
+    const val core_ktx = "1.16.0"
     const val material = "1.7.0"
     const val constraint_layout = "2.1.4"
     const val activity_ktx = "1.5.1"
