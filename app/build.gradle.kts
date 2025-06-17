@@ -7,9 +7,10 @@ plugins {
 
 android {
     compileSdk = Project.COMPILE_SDK
+    namespace = "com.dontsu.digimonadventure"
 
     defaultConfig {
-        applicationId = "com.dontsu.digimonadventure"
+        applicationId = "com.dontsu.digimonadventure.digidex"
         minSdk = Project.MIN_SDK
         targetSdk = Project.TARGET_SDK
         versionCode = Project.versionCode

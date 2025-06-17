@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DigimonAdventure</string>
+    <string name="app_name">DigiDex</string>
     <string name="hint_search">search…</string>
     <string name="search">search</string>
     <string name="clear">clear</string>
