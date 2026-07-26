@@ -1,8 +1,8 @@
 import org.gradle.api.JavaVersion
 
 object Project {
-    const val versionName = "1.0.1" // X.Y.Z; X = Major, Y = minor, Z = Patch level
-    const val versionCode = 2
+    const val versionName = "1.0.3" // X.Y.Z; X = Major, Y = minor, Z = Patch level
+    const val versionCode = 4
     const val COMPILE_SDK = 36
     const val TARGET_SDK = 36
     const val MIN_SDK = 21
