@@ -19,7 +19,6 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="android:statusBarColor">?attr/colorPrimary</item>
-        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="TextAppearance.Digimon.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5">

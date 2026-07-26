@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 
@@ -17,17 +18,37 @@ abstract class BaseActivity<VB : ViewBinding, VM : ViewModel>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = inflate.invoke(layoutInflater, null, false)
         enableEdgeToEdge()
+        binding = inflate.invoke(layoutInflater, null, false)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        applyWindowInsets()
         initObservers()
         initViews()
         initListeners()
+    }
+
+    private fun applyWindowInsets() = with(binding.root) {
+        val initialPaddingLeft = paddingLeft
+        val initialPaddingTop = paddingTop
+        val initialPaddingRight = paddingRight
+        val initialPaddingBottom = paddingBottom
+
+        ViewCompat.setOnApplyWindowInsetsListener(this) { view, windowInsets ->
+            val systemBars = windowInsets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or
+                    WindowInsetsCompat.Type.displayCutout()
+            )
+            val ime = windowInsets.getInsets(WindowInsetsCompat.Type.ime())
+
+            view.updatePadding(
+                left = initialPaddingLeft + systemBars.left,
+                top = initialPaddingTop + systemBars.top,
+                right = initialPaddingRight + systemBars.right,
+                bottom = initialPaddingBottom + maxOf(systemBars.bottom, ime.bottom)
+            )
+            windowInsets
+        }
+        ViewCompat.requestApplyInsets(this)
     }
 
     open fun initViews() = Unit

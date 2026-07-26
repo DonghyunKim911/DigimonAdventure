@@ -10,7 +10,7 @@ android {
     namespace = "com.dontsu.digimonadventure"
 
     defaultConfig {
-        applicationId = "com.dontsu.digimonadventure.digidex"
+        applicationId = "com.dontsu.digimonadventure"
         minSdk = Project.MIN_SDK
         targetSdk = Project.TARGET_SDK
         versionCode = Project.versionCode
@@ -37,9 +37,6 @@ android {
         jvmTarget = Project.javaVersion.toString()
     }
 
-    kapt {
-        generateStubs = true
-    }
 }
 
 dependencies {
